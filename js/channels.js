@@ -2,6 +2,9 @@
 var kgchannels=[];
 kgchannels[0]={
 name:"NDTV",
-categories:[]
+categories:[
+				["Technology","rss url"],
+				[]
+			],
 
 };
