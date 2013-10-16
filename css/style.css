@@ -32,7 +32,7 @@
 	width:100%;
 	border-left:1px solid #999999;
 	box-shadow: 0 0 20px #222;
-	 
+
 }
 
 .channelList
@@ -40,8 +40,11 @@
 	margin:0px;
 	padding:0px;
 	list-style: none;
-	overflow-x:none;
+	overflow-x:hidden;
 	overflow-y:auto; 
+	font-family: Verdana;
+	color: whitesmoke;
+	font-weight: 500;
 }
 
 .channelItem
@@ -49,3 +52,37 @@
 	padding:10px;
 
 }
+
+.channelItemSelected
+{
+	background-color: #999999;
+
+}
+
+.channelItemBorder
+{
+	border-bottom:1px solid #888888;
+
+}
+.channelItemHeading
+{
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.6);	
+	padding-bottom: 20px;
+}
+
+
+.closeBtn
+{
+	cursor: pointer;
+	color:#efefef;
+	position:fixed;
+	top:0px;
+	left:100%;
+	margin-left:-25px;
+	width:30px;
+	height:10px;
+	padding-left:10px;
+	padding-bottom:10px;
+	font-weight: bold;
+}
+
