@@ -1,0 +1,11 @@
+{
+  "name": "KGNews",
+  "description": "News App",
+  "version": "1.0",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { "16": "images/kgnews-16.png", "128": "images/kgnews-128.png" }
+}
