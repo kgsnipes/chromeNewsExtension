@@ -1,0 +1,51 @@
+.feed
+{
+	background-color:#cccccc;
+	height:100%;
+	position:fixed;
+	top:0px;
+	left:40%;
+	width:100%;
+	border-left:1px solid #bbbbbb;
+	box-shadow: 0 0 20px #222;
+}
+
+.categories
+{
+	background-color:#bbbbbb;
+	height:100%;
+	position:fixed;
+	top:0px;
+	left:20%;
+	width:100%;
+	border-left:1px solid #aaaaaa;
+	box-shadow: 0 0 20px #222;
+}
+
+.channels
+{
+	background-color:#aaaaaa;
+	height:100%;
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	border-left:1px solid #999999;
+	box-shadow: 0 0 20px #222;
+	 
+}
+
+.channelList
+{
+	margin:0px;
+	padding:0px;
+	list-style: none;
+	overflow-x:none;
+	overflow-y:auto; 
+}
+
+.channelItem
+{
+	padding:10px;
+
+}
