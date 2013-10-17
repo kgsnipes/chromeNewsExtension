@@ -5,9 +5,56 @@
 })();
 
 $(document).ready(function(){
-	populateChannels();
-
+	initApp();
 });
+
+
+function initApp()
+{
+//populate channels
+	populateChannels();
+	//populate category for first channel
+	populateCategories(kgchannels[0].name);
+	//populate the breadcrumb
+	$(".breadCrumb .channelName").html(kgchannels[0].name);
+	$(".breadCrumb .categoryName").html(kgchannels[0].primaryCategory);
+	//populate the feed for the first category
+	$($(".channelListing li")[0]).addClass("channelItemSelected");
+	$.each(kgchannels[0].categories,function(){
+							
+							if(this[0]==kgchannels[0].primaryCategory)
+							{
+								categoryname=this[0];
+								
+								populateFeedForCategory(this[1]);
+								
+								$(".categoryListing li").each(function(){
+										if(categoryname==$($(this).children("span")[0]).text())
+										{
+											$(this).addClass("categoryItemSelected");
+											return false;
+										}
+								});
+								return false;
+							}
+						
+						});
+						
+						
+	
+	$(".breadCrumb").click(function(){
+		if(parseInt($(".feed").css("left"))>0)
+		{
+			//close
+			openOrCloseDrawer(false);
+		}
+		else
+		{
+			//open
+			openOrCloseDrawer(true);
+		}
+	});
+}
 
 
 function populateChannels()
@@ -16,6 +63,7 @@ function populateChannels()
 		$(".channelListing").append("<li class=\"channelItem channelItemClickable\"><span>"+this.name+"</span></li>");
 	});
 	addClickToChannels();
+	
 }
 
 function populateCategories(channelname)
@@ -104,7 +152,26 @@ function addClickToCategories()
 		
 		$(".categoryListing li").removeClass("categoryItemSelected");
 		
+			populateFeedForCategory($(this).attr("data-url"));
 			$(this).addClass("categoryItemSelected");
 		
 	});
+}
+
+
+function openOrCloseDrawer(flag)
+{
+	if(flag){
+	//open
+	$(".feed").animate({left:'40%'},500);
+	$(".categories").animate({left:'20%'},500);
+	}
+	else
+	{
+	$(".categories").animate({left:'0%'},500);
+	$(".feed").animate({left:'0%'},500);
+	
+	
+	}
+	
 }
