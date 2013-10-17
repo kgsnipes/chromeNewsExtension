@@ -92,7 +92,7 @@ function addClickToChannels()
 		$(".channelListing li").removeClass("channelItemSelected");
 		
 			populateCategories($($(this).children("span")[0]).text());
-			
+			$(".breadCrumb .channelName").html($($(this).children("span")[0]).text());
 			$(this).addClass("channelItemSelected");
 			
 			channel=this;
@@ -108,7 +108,7 @@ function addClickToChannels()
 							if(this[0]==channelObj.primaryCategory)
 							{
 								categoryname=this[0];
-								
+								$(".breadCrumb .categoryName").html(categoryname);
 								populateFeedForCategory(this[1]);
 								
 								$(".categoryListing li").each(function(){
@@ -118,11 +118,15 @@ function addClickToChannels()
 											return false;
 										}
 								});
+								
+								
 								return false;
 							}
 						
 						});
-						
+						if(this.categories.length==1)
+							openOrCloseDrawer(false);
+						return false;
 					}
 			
 			});
@@ -132,10 +136,16 @@ function addClickToChannels()
 
 function populateFeedForCategory(url)
 {
+$(".feedListing").empty();
 	getXMLData(url,function(xml){
 	
-	console.log(getNewsItems(xml));
+	var items=getNewsItems(xml);
+	console.log(items);
+	$.each(items,function(){
+		
+		$(".feedListing").append("<li><span class=\"feedItemTitle\">"+this.title+"</span><div class=\"feedItemDescription\">"+this.description+"</div></li>");
 	
+	});
 	
 	},function(){
 	
@@ -154,6 +164,8 @@ function addClickToCategories()
 		
 			populateFeedForCategory($(this).attr("data-url"));
 			$(this).addClass("categoryItemSelected");
+			$(".breadCrumb .categoryName").html($($(this).children("span")[0]).text());
+			openOrCloseDrawer(false);
 		
 	});
 }

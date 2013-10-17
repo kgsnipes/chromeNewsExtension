@@ -1,6 +1,6 @@
 .feed
 {
-	background-color:#b2b2b2;
+	background-color:#f4f4f4;
 	height:100%;
 	position:fixed;
 	top:0px;
@@ -8,6 +8,8 @@
 	width:100%;
 	border-left:1px solid #bbbbbb;
 	box-shadow: 0 0 20px #222;
+	overflow-x:hidden;
+	overflow-y:auto;
 }
 
 .categories
@@ -20,6 +22,8 @@
 	width:100%;
 	border-left:1px solid #aaaaaa;
 	box-shadow: 0 0 20px #222;
+	overflow-x:hidden;
+	overflow-y:auto;
 }
 
 .channels
@@ -32,6 +36,8 @@
 	width:100%;
 	border-left:1px solid #999999;
 	box-shadow: 0 0 20px #222;
+	overflow-x:hidden;
+	overflow-y:auto;
 
 }
 
@@ -81,43 +87,6 @@
 	font-weight:bold;
 }
 
-
-.closeBtn
-{
-	cursor: pointer;
-	color:#606060;
-	position:fixed;
-	top:0px;
-	left:100%;
-	margin-left:-25px;
-	width:30px;
-	height:10px;
-	padding-left:10px;
-	padding-bottom:10px;
-	font-weight: 100;
-}
-
-.plusSymbol
-{
-	font-weight:bold;
-	color:#ffffff;
-	font-size:20px;
-	margin-left:10px;
-	cursor:pointer;
-	text-decoration:none;
-}
-
-.plusSymbol:hover
-{
-	font-weight:bold;
-	color:#ffffff;
-	font-size:20px;
-	margin-left:10px;
-	cursor:pointer;
-	text-decoration:none;
-}
-
-
 .breadCrumb
 {
 	background-color:white;		
@@ -130,4 +99,37 @@
 	border-bottom-right-radius:10px;
 	cursor:pointer;
 	text-decoration:none;
+}
+
+.feedListing
+{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	
+	width:100%;
+}
+
+.feedListing li
+{
+	width:90%;
+	background-color:white;
+	color:#999999;
+	padding:10px;
+	margin:10px;
+}
+
+.feedItemTitle
+{
+	color:#000;
+	font-family:Verdana;
+	font-weight:bold;
+}
+
+.feedItemDescription
+{
+	background-color:#cccccc;
+	color:#444;
+	margin:5px;
+	padding:10px;
 }
