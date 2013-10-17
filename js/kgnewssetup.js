@@ -72,6 +72,8 @@ function initApp()
 	
 	
 	});
+
+	$(".loadingIcon").css({left:''+((($(document).width()-64)/$(document).width())*100)+'%'}).hide();
 }
 
 
@@ -154,9 +156,11 @@ function addClickToChannels()
 
 function populateFeedForCategory(url)
 {
-$(".feedListing").empty();
+
+$(".loadingIcon").show();
 	getXMLData(url,function(xml){
 	
+	$(".feedListing").empty();
 	var items=getNewsItems(xml);
 	console.log(items);
 	$.each(items,function(){
@@ -179,6 +183,8 @@ $(".feedListing").empty();
 
 
 	});
+
+	$(".loadingIcon").hide();
 	
 	},function(){
 	
