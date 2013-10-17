@@ -7,6 +7,6 @@
       "scripts": ["background.js"]
     }
   },
-  "permissions":["http://www.techmeme.com/*"],
+  "permissions":["http://www.techmeme.com/*","http://feeds.feedburner.com/*"],
   "icons": { "16": "images/kgnews-16.png", "128": "images/kgnews-128.png" }
 }

@@ -1,6 +1,6 @@
 .feed
 {
-	background-color:#cccccc;
+	background-color:#f4f4f4;
 	height:100%;
 	position:fixed;
 	top:0px;
@@ -12,7 +12,7 @@
 
 .categories
 {
-	background-color:#bbbbbb;
+	background-color:#606060;
 	height:100%;
 	position:fixed;
 	top:0px;
@@ -24,7 +24,7 @@
 
 .channels
 {
-	background-color:#aaaaaa;
+	background-color:#2156a5;
 	height:100%;
 	position:fixed;
 	top:0px;
@@ -43,22 +43,32 @@
 	overflow-x:hidden;
 	overflow-y:auto; 
 	font-family: Verdana;
-	color: whitesmoke;
+	color: white;
 	font-weight: 500;
 }
 
 .channelItem
 {
 	padding:10px;
+	
+}
 
+.channelItemClickable
+{
+	cursor:pointer;
 }
 
 .channelItemSelected
 {
-	background-color: #999999;
+	background-color:#606060;
 
 }
 
+.categoryItemSelected
+{
+	background-color:#3d3d3d;
+
+}
 .channelItemBorder
 {
 	border-bottom:1px solid #888888;
@@ -68,13 +78,14 @@
 {
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.6);	
 	padding-bottom: 20px;
+	font-weight:bold;
 }
 
 
 .closeBtn
 {
 	cursor: pointer;
-	color:#efefef;
+	color:#606060;
 	position:fixed;
 	top:0px;
 	left:100%;
@@ -83,6 +94,25 @@
 	height:10px;
 	padding-left:10px;
 	padding-bottom:10px;
-	font-weight: bold;
+	font-weight: 100;
 }
 
+.plusSymbol
+{
+	font-weight:bold;
+	color:#ffffff;
+	font-size:20px;
+	margin-left:10px;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+.plusSymbol:hover
+{
+	font-weight:bold;
+	color:#ffffff;
+	font-size:20px;
+	margin-left:10px;
+	cursor:pointer;
+	text-decoration:none;
+}
