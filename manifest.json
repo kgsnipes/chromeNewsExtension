@@ -13,7 +13,7 @@
   					"http://feeds.feedburner.com/*",
   					"http://*.feedsportal.com/*",
   					"http://*.chicisimo.com/*",
-  					"http://chicisimo.com/*"
+  					"http://chicisimo.com/*","webview"
   				],
   "icons": { "16": "images/kgnews-16.png", "128": "images/kgnews-128.png" }
 }

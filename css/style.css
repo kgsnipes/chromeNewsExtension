@@ -28,7 +28,7 @@
 
 .channels
 {
-	background-color:#1c6ece;
+	background-color:#5a8fe1;
 	height:100%;
 	position:fixed;
 	top:0px;
@@ -131,7 +131,7 @@
 	color:#999999;
 	padding:10px;
 	margin:10px;
-	border-left: 5px solid rgba(255,0,0,0.5);
+	border-left: 10px solid rgba(255,0,0,0.5);
 	border-bottom: 1px solid #bbb;
 	box-shadow: 2px 3px 5px #999;
 }
@@ -162,4 +162,36 @@
 	left: 90%;
 	width:32px;
 	height: 32px;
+}
+
+.webViewScreen
+{
+	width: 100%;
+	height:100%;
+	background-color: #999999;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+
+}
+
+.webViewCloseBtn 
+{
+	padding:5px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	margin:0px;
+	color: white;
+	font-weight: bold;
+}
+
+.webviewContainer
+{
+	width:90%;
+	height:90%;
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	
 }

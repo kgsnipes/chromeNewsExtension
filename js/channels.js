@@ -4,7 +4,9 @@ kgchannels[0]={
 name:"NDTV",
 categories:[
 				["Top Stories","http://feeds.feedburner.com/NdtvNews-TopStories?format=xml"],
-				["Technology","http://feeds.feedburner.com/NDTV-Tech?format=xml"]
+				["Latest","http://feeds.feedburner.com/NDTV-LatestNews?format=xml"],
+				["World","http://feeds.feedburner.com/ndtv/TqgX?format=xml"],
+				["Technology","http://feeds.feedburner.com/NDTV-Tech?format=xml"],
 			],
 primaryCategory:"Top Stories"
 
@@ -20,10 +22,10 @@ primaryCategory:"Technology"
 };
 
 kgchannels[2]={
-name:"Solestruck",
+name:"Chichisimo",
 categories:[
-				["Blog","http://chicisimo.com/feed/rss/"]
+				["Looks","http://chicisimo.com/feed/rss/"]
 			],
-primaryCategory:"Blog"
+primaryCategory:"Looks"
 
 };

@@ -8,9 +8,10 @@ $(document).ready(function(){
 	initApp();
 });
 
-
+var windowsArr=[];
 function initApp()
 {
+	$(".webViewScreen").hide();
 //populate channels
 	populateChannels();
 	//populate category for first channel
@@ -74,6 +75,10 @@ function initApp()
 	});
 
 	$(".loadingIcon").css({left:''+((($(document).width()-64)/$(document).width())*100)+'%'}).hide();
+
+	$(".webViewCloseBtn").click(function(){
+		$(".webViewScreen").hide();
+	});
 }
 
 
@@ -165,7 +170,7 @@ $(".loadingIcon").show();
 	console.log(items);
 	$.each(items,function(){
 		
-		$(".feedListing").append("<li><a href=\""+this.permUrl+"\" class=\"feedItemTitle\" target=\"_blank\">"+this.title+"</a><div class=\"feedItemDescription\">"+this.description+"</div></li>");
+		$(".feedListing").append("<li><a data-href=\""+this.permUrl+"\" class=\"feedItemTitle\" target=\"_blank\">"+this.title+"</a><div class=\"feedItemDescription\">"+this.description+"</div></li>");
 		
 
 		$(".feed ul.feedListing li div.feedItemDescription img").each(function(){
@@ -182,7 +187,17 @@ $(".loadingIcon").show();
 	$(".feed ul.feedListing li div.feedItemDescription br").remove();
 
 
+
 	});
+
+	$(".feedListing li a.feedItemTitle").click(function(){
+
+		$(".webviewContainer").attr("src",$(this).attr("data-href"));
+		$(".webViewScreen").show();
+	//	$(this).next().append("<webview src=\""+$(this).attr("data-href")+"\" style=\"width:100%;height:200px;\"></webview>")
+
+	});
+
 
 	$(".loadingIcon").hide();
 	
@@ -232,3 +247,5 @@ function openOrCloseDrawer(flag)
 	}
 	
 }
+
+//myRef = window.open(''+self.location,'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0');
