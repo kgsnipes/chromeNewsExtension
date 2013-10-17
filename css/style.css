@@ -102,6 +102,9 @@
 	top:0px;
 	left:0%;
 	box-shadow: 2px 3px 4px #bbb;
+	border-bottom:1px solid rgba(0,255,0,0.7);
+	border-right:1px solid rgba(0,255,0,0.7);
+	border-left:1px solid rgba(0,255,0,0.7);
 	
 }
 
