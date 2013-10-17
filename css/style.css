@@ -91,14 +91,23 @@
 {
 	background-color:white;		
 	height:20px;
-	margin:5px;
-	padding:5px;
+	padding:0px;
 	color:#444;
 	font-weight:bold;
 	border-bottom-left-radius:10px;
 	border-bottom-right-radius:10px;
 	cursor:pointer;
 	text-decoration:none;
+	position:fixed;
+	top:0px;
+	left:0%;
+	box-shadow: 2px 3px 4px #bbb;
+	
+}
+
+.breadCrumb span
+{
+	padding:10px;
 }
 
 .feedListing

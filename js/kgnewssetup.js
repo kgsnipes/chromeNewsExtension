@@ -54,6 +54,24 @@ function initApp()
 			openOrCloseDrawer(true);
 		}
 	});
+	
+	$(".feed").scroll(function(){
+	
+		if($(".feed").scrollTop()==0 && parseInt($(".feed").css("left"))>0)
+		{
+			$(".breadCrumb").css({left:'40%'});
+		}
+		else if($(".feed").scrollTop()>0 && parseInt($(".feed").css("left"))>0)
+			{
+				$(".breadCrumb").css({left:'40%'});
+			}
+		else if($(".feed").scrollTop()==0 && parseInt($(".feed").css("left"))==0)
+		{
+			$(".breadCrumb").css({left:'0%'});
+		}
+	
+	
+	});
 }
 
 
@@ -177,12 +195,15 @@ function openOrCloseDrawer(flag)
 	//open
 	$(".feed").animate({left:'40%'},500);
 	$(".categories").animate({left:'20%'},500);
+	$(".breadCrumb").animate({left:'40%'},500);
+	$(".feedListing").animate({width:'60%'},500);
 	}
 	else
 	{
 	$(".categories").animate({left:'0%'},500);
 	$(".feed").animate({left:'0%'},500);
-	
+	$(".breadCrumb").animate({left:'0%'},500);
+	$(".feedListing").animate({width:'95%'},500);
 	
 	}
 	
