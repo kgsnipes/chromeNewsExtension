@@ -28,7 +28,7 @@
 
 .channels
 {
-	background-color:#2156a5;
+	background-color:#1c6ece;
 	height:100%;
 	position:fixed;
 	top:0px;
@@ -112,11 +112,14 @@
 
 .feedListing li
 {
-	width:90%;
+	width:95%;
 	background-color:white;
 	color:#999999;
 	padding:10px;
 	margin:10px;
+	border-left: 3px solid red;
+	border-bottom: 1px solid #bbb;
+	box-shadow: 2px 3px 5px #999;
 }
 
 .feedItemTitle
@@ -128,8 +131,11 @@
 
 .feedItemDescription
 {
-	background-color:#cccccc;
+	background-color:#eeeeee;
 	color:#444;
 	margin:5px;
 	padding:10px;
+	font-family: Tahoma;
+	box-shadow: 2px 3px 4px #bbb;
+	
 }
