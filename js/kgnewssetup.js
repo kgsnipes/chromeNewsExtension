@@ -161,8 +161,23 @@ $(".feedListing").empty();
 	console.log(items);
 	$.each(items,function(){
 		
-		$(".feedListing").append("<li><span class=\"feedItemTitle\">"+this.title+"</span><div class=\"feedItemDescription\">"+this.description+"</div></li>");
-	
+		$(".feedListing").append("<li><a href=\""+this.permUrl+"\" class=\"feedItemTitle\" target=\"_blank\">"+this.title+"</a><div class=\"feedItemDescription\">"+this.description+"</div></li>");
+		
+
+		$(".feed ul.feedListing li div.feedItemDescription img").each(function(){
+
+			var img=this;
+		 loadImage($(this).attr("data-img-src"), function(blob_uri, requested_uri) {
+          img.src = blob_uri;
+         
+        });
+
+
+	});
+	$(".feed ul.feedListing li div.feedItemDescription a").remove();
+	$(".feed ul.feedListing li div.feedItemDescription br").remove();
+
+
 	});
 	
 	},function(){
@@ -170,6 +185,9 @@ $(".feedListing").empty();
 	console.log("failed");
 	
 	});
+
+	
+
 }
 
 function addClickToCategories()
@@ -196,7 +214,7 @@ function openOrCloseDrawer(flag)
 	$(".feed").animate({left:'40%'},500);
 	$(".categories").animate({left:'20%'},500);
 	$(".breadCrumb").animate({left:'40%'},500);
-	$(".feedListing").animate({width:'60%'},500);
+	$(".feedListing").animate({width:'55%'},500);
 	}
 	else
 	{

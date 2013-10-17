@@ -89,7 +89,7 @@
 
 .breadCrumb
 {
-	background-color:white;		
+	background-color:#2ed56f;		
 	height:20px;
 	padding:0px;
 	color:#444;
@@ -102,15 +102,17 @@
 	top:0px;
 	left:0%;
 	box-shadow: 2px 3px 4px #bbb;
-	border-bottom:1px solid rgba(0,255,0,0.7);
-	border-right:1px solid rgba(0,255,0,0.7);
-	border-left:1px solid rgba(0,255,0,0.7);
+	border-bottom:1px solid #22ae59;
+	border-right:1px solid #22ae59;
+	border-left:1px solid #22ae59;
+	padding-bottom:22px;
 	
 }
 
 .breadCrumb span
 {
-	padding:10px;
+	padding:5px;
+	color: #33090b;
 }
 
 .feedListing
@@ -118,13 +120,13 @@
 	margin:0px;
 	padding:0px;
 	list-style:none;
-	
-	width:100%;
+	margin-top:35px;
+	width:97%;
 }
 
 .feedListing li
 {
-	width:95%;
+	width:100%;
 	background-color:white;
 	color:#999999;
 	padding:10px;
@@ -139,6 +141,7 @@
 	color:#000;
 	font-family:Verdana;
 	font-weight:bold;
+	cursor: pointer;
 }
 
 .feedItemDescription
@@ -150,4 +153,13 @@
 	font-family: Tahoma;
 	box-shadow: 2px 3px 4px #bbb;
 	
+}
+
+.loadingIcon
+{
+	position:fixed;
+	top: 0px;
+	left: 90%;
+	width:32px;
+	height: 32px;
 }

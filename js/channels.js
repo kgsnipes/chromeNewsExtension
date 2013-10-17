@@ -18,3 +18,12 @@ categories:[
 primaryCategory:"Technology"
 
 };
+
+kgchannels[2]={
+name:"Solestruck",
+categories:[
+				["Blog","http://chicisimo.com/feed/rss/"]
+			],
+primaryCategory:"Blog"
+
+};

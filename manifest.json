@@ -7,6 +7,13 @@
       "scripts": ["background.js"]
     }
   },
-  "permissions":["http://www.techmeme.com/*","http://feeds.feedburner.com/*"],
+  "permissions":[
+  					"http://www.techmeme.com/*",
+  					"http://*.techmeme.com/*",
+  					"http://feeds.feedburner.com/*",
+  					"http://*.feedsportal.com/*",
+  					"http://*.chicisimo.com/*",
+  					"http://chicisimo.com/*"
+  				],
   "icons": { "16": "images/kgnews-16.png", "128": "images/kgnews-128.png" }
 }

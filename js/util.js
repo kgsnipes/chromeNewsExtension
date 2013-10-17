@@ -33,6 +33,16 @@ function getNewsItem(node)
 		{
 			var insideCData=$(node).find("description").text().substring($(node).find("description").text().indexOf("<![CDATA["),$(node).find("description").text().lastIndexOf("]]>"));
 			console.log(insideCData);
+			insideCData=insideCData.replace(/src=/g,"data-img-src=");
+			insideCData=insideCData.replace(/href=/g,"data-a-href=");
+			item.description=insideCData;
+		}
+		else if($(node).find("description").text().indexOf("src=")!=-1 || $(node).find("description").text().indexOf("href=")!=-1)
+		{
+			var insideCData=$(node).find("description").text();
+			console.log(insideCData);
+			insideCData=insideCData.replace(/src=/g,"data-img-src=");
+			insideCData=insideCData.replace(/href=/g,"data-a-href=");
 			item.description=insideCData;
 		}
 		else
@@ -63,3 +73,16 @@ function getNewsItems(rssXmlContent)
 	
 	return newsItems;
 }
+
+var loadImage = function(uri, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = 'blob';
+  xhr.onload = function() {
+ 
+    callback(window.webkitURL.createObjectURL(xhr.response), uri);
+  }
+  xhr.open('GET', uri, true);
+  xhr.send();
+}
+
+ 
