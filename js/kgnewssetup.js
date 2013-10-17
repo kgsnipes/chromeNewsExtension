@@ -77,7 +77,7 @@ function initApp()
 	$(".loadingIcon").css({left:''+((($(document).width()-64)/$(document).width())*100)+'%'}).hide();
 
 	$(".webViewCloseBtn").click(function(){
-		$(".webViewScreen").hide();
+		$(".webViewScreen").fadeOut(500);
 	});
 }
 
@@ -193,7 +193,7 @@ $(".loadingIcon").show();
 	$(".feedListing li a.feedItemTitle").click(function(){
 
 		$(".webviewContainer").attr("src",$(this).attr("data-href"));
-		$(".webViewScreen").show();
+		$(".webViewScreen").fadeIn(500);
 	//	$(this).next().append("<webview src=\""+$(this).attr("data-href")+"\" style=\"width:100%;height:200px;\"></webview>")
 
 	});
