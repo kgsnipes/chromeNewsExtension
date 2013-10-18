@@ -122,15 +122,18 @@ function initApp()
 
 function populateChannels()
 {
+	$(".channels").mCustomScrollbar("destroy");
 	$.each(kgchannels,function(){
 		$(".channelListing").append("<li class=\"channelItem channelItemClickable\"><span>"+this.name+"</span></li>");
 	});
+	$(".channels").mCustomScrollbar({advanced:{autoExpandHorizontalScroll: true}});
 	addClickToChannels();
 	
 }
 
 function populateCategories(channelname)
 {
+	$(".categories").mCustomScrollbar("destroy");
 	$(".categoryListing").empty();
 	$.each(kgchannels,function(){
 		if(this.name==channelname)
@@ -141,7 +144,7 @@ function populateCategories(channelname)
 		}
 			
 	});
-	
+	$(".categories").mCustomScrollbar({advanced:{autoExpandHorizontalScroll: true}});
 	addClickToCategories();
 }
 
@@ -205,6 +208,7 @@ $(".loadingIcon").show();
 	
 	//xml=$.parseXML( xml );
 	//$(".feedListing li").slideout(1000);
+	$(".feed").mCustomScrollbar("destroy");
 				$(".feedListing").empty();
 	var items=getNewsItems(xml);
 	console.log(items);
@@ -238,10 +242,12 @@ $(".loadingIcon").show();
 
 	});
 
-	$(".feed").scrollTop(0);
+	//$(".feed").scrollTop(0);
+	
 	$(".loadingIcon").hide();
 	
-	
+	$(".feed").mCustomScrollbar({advanced:{autoExpandHorizontalScroll: true}});
+	$(".feed").mCustomScrollbar("scrollTo","top");
 	
 	},function(a,b,c){
 	$(".feedListing").empty();
