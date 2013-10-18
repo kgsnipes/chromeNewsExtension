@@ -203,7 +203,8 @@ function addClickToChannels()
 function populateFeedForCategory(url)
 {
 
-$(".loadingIcon").show();
+	//$('.feed').showLoading();
+	$(".loadingIcon").show();
 	getXMLData(url,function(xml){
 	
 	//xml=$.parseXML( xml );
@@ -225,6 +226,8 @@ $(".loadingIcon").show();
 			
         });
 
+		//imgQ.addImageToQueue($(this).attr("data-img-src"),this);
+
 
 	});
 	$(".feed ul.feedListing li div.feedItemDescription a").remove();
@@ -243,15 +246,18 @@ $(".loadingIcon").show();
 	});
 
 	//$(".feed").scrollTop(0);
-	
+	//$('.feed').hideLoading();
 	$(".loadingIcon").hide();
 	
 	$(".feed").mCustomScrollbar({advanced:{autoExpandHorizontalScroll: true}});
 	$(".feed").mCustomScrollbar("scrollTo","top");
 	
 	},function(a,b,c){
+		//$('.feed').hideLoading();
+		$(".loadingIcon").hide();
 	$(".feedListing").empty();
 	$(".feedRefresh").unbind();
+
 	$(".feedListing").append("<li style=\"border-left:10px solid red;\"><a data-href=\"#\" class=\"feedItemTitle feedRefresh\" target=\"_blank\">Hmm... something doesn't feel right.</a><div class=\"feedItemDescription\">There seems to be a problem with the feed or the network connection. Please check the network connection, then try refeshing the feed. If the problem still exists, then bug the developer with an email to - kgsnipes@gmail.com <br/><a class=\"feedRefresh\">Refresh the feed</a></div></li>");
 	console.log("failed");
 	
@@ -326,6 +332,7 @@ function openOrCloseDrawer(flag)
 	$(".feed").animate({left:'40%',width:'60%'},500);
 	$(".categories").animate({left:'20%'},500);
 	$(".breadCrumb").animate({left:'40%'},500);
+	$(".loadingIcon").animate({left:'72%'},500);
 	//$(".feedListing").animate({width:'55%'},500);
 	}
 	else
@@ -333,6 +340,7 @@ function openOrCloseDrawer(flag)
 	$(".categories").animate({left:'0%'},500);
 	$(".feed").animate({left:'0%',width:'100%'},500);
 	$(".breadCrumb").animate({left:'0%'},500);
+	$(".loadingIcon").animate({left:'32%'},500);
 	//$(".feedListing").animate({width:'95%'},500);
 	
 	}

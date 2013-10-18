@@ -38,7 +38,7 @@ function getNewsItem(node)
 		{
 			var insideCData=$(node).find("description").text().substring($(node).find("description").first().text().indexOf("<![CDATA["),$(node).find("description").first().text().lastIndexOf("]]>"));
 			console.log(insideCData);
-			insideCData=insideCData.replace(/src=/g,"data-img-src=");
+			insideCData=insideCData.replace(/src=/g," alt=\"loading..\" data-img-src=");
 			insideCData=insideCData.replace(/href=/g,"data-a-href=");
 			item.description=insideCData;
 		}
@@ -46,7 +46,7 @@ function getNewsItem(node)
 		{
 			var insideCData=$(node).find("description").first().text();
 			console.log(insideCData);
-			insideCData=insideCData.replace(/src=/g,"data-img-src=");
+			insideCData=insideCData.replace(/src=/g," alt=\"loading..\"data-img-src=");
 			insideCData=insideCData.replace(/href=/g,"data-a-href=");
 			item.description=insideCData;
 		}
@@ -92,3 +92,63 @@ var loadImage = function(uri, callback) {
 }
 
  
+ function imageLoaderQueue(){}
+
+ 
+ 		imageLoaderQueue.prototype.imgArr=[];
+ 		imageLoaderQueue.prototype.interval;
+
+ 		imageLoaderQueue.prototype.addImageToQueue=function(url,imgTag)
+ 		{
+ 			this.imgArr.push([url,imgTag]);
+ 			if(!this.interval)
+ 			  this.imageLoad();
+ 		};
+
+ 		imageLoaderQueue.prototype.removeImageFromQueue=function(url,imgTag)
+ 		{	
+ 			var arr=new Array();
+ 			$.each(this.imgArr,function(){
+
+ 				if(!(this[0]==url && this[1]==imgTag))
+ 				{
+ 					arr.push(this);
+ 				}
+
+ 			});
+
+ 			this.imgArr=arr;
+ 			
+ 		};
+
+ 		imageLoaderQueue.prototype.imageLoad=function()
+ 		{
+ 			self=this;
+ 			var count=0;
+ 				$.each(this.imgArr,function(){
+
+ 					if(count<10)
+ 					{
+ 							img=this[1];
+	 						 loadImage(this[0], function(blob_uri, requested_uri) {
+					          img.src = blob_uri;
+								self.removeImageFromQueue(this[0],this[1]);
+					        });
+ 					}
+ 					else
+ 					  return false;
+
+ 				});
+ 			
+ 			
+ 				if(this.imgArr.length>0)
+ 				{
+ 					this.interval=setInterval(this.imageLoad,1000);
+ 				}
+ 				else
+ 				{
+ 					clearInterval(this.interval);
+ 				}
+ 		};
+ 
+ var imgQ=new imageLoaderQueue();
