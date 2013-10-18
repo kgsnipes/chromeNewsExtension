@@ -22,7 +22,7 @@ function getXMLData(rssUrl,successCallback,failureCallback)
 		url:rssUrl,
 		dataType:'xml',
 		success:successCallback,
-		failure:failureCallback
+		error:failureCallback
 	});
 }
 
@@ -86,6 +86,7 @@ var loadImage = function(uri, callback) {
  
     callback(window.webkitURL.createObjectURL(xhr.response), uri);
   }
+  
   xhr.open('GET', uri, true);
   xhr.send();
 }

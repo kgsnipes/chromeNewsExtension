@@ -202,9 +202,52 @@ $(".loadingIcon").show();
 
 	$(".loadingIcon").hide();
 	
-	},function(){
-	
+	},function(a,b,c){
+	$(".feedListing").empty();
+	$(".feedRefresh").unbind();
+	$(".feedListing").append("<li style=\"border-left:10px solid red;\"><a data-href=\"#\" class=\"feedItemTitle feedRefresh\" target=\"_blank\">Hmm... something doesn't feel right.</a><div class=\"feedItemDescription\">There seems to be a problem with the feed or the network connection. Please check the network connection, then try refeshing the feed. If the problem still exists, then bug the developer with an email to - kgsnipes@gmail.com <br/><a class=\"feedRefresh\">Refresh the feed</a></div></li>");
 	console.log("failed");
+	
+	$(".feedRefresh").click(function(){
+	
+	//$(".breadCrumb .channelName").html(kgchannels[0].name);
+	//$(".breadCrumb .categoryName").html(kgchannels[0].primaryCategory);
+		$.each(kgchannels,function(){
+			
+					
+					if($(".breadCrumb .channelName").text()==this.name)
+					{
+						var channelObj=this;
+						var urlForfeed='';
+						$.each(this.categories,function(){
+							
+							if(this[0]==$(".breadCrumb .categoryName").text())
+							{
+								categoryname=this[0];
+								$(".breadCrumb .categoryName").html(categoryname);
+								populateFeedForCategory(this[1]);
+								
+								$(".categoryListing li").each(function(){
+										if(categoryname==$($(this).children("span")[0]).text())
+										{
+											$(this).addClass("categoryItemSelected");
+											return false;
+										}
+								});
+								
+								
+								return false;
+							}
+						
+						});
+						if(this.categories.length==1)
+							openOrCloseDrawer(false);
+						return false;
+					}
+			
+			});
+	
+	});
 	
 	});
 
