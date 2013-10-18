@@ -19,7 +19,7 @@
 	position:fixed;
 	top:0px;
 	left:0%;
-	width:100%;
+	width:20%;
 	border-left:1px solid #aaaaaa;
 	box-shadow: 0 0 20px #222;
 	overflow-x:hidden;
@@ -33,7 +33,7 @@
 	position:fixed;
 	top:0px;
 	left:0px;
-	width:100%;
+	width:20%;
 	border-left:1px solid #999999;
 	box-shadow: 0 0 20px #222;
 	overflow-x:hidden;

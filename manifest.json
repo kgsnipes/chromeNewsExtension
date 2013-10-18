@@ -17,6 +17,7 @@
 					"http://timesofindia.indiatimes.com/*",
 					"http://*.indiatimes.com/*",
 					"http://*.wordpress.com/*",
+					"http://*.ibnlive.in.com/*",
 					"webview"
   				],
   "icons": { "16": "images/kgnews-16.png", "128": "images/kgnews-128.png" }
