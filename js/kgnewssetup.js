@@ -203,7 +203,8 @@ function populateFeedForCategory(url)
 $(".loadingIcon").show();
 	getXMLData(url,function(xml){
 	
-	$(".feedListing").empty();
+	//$(".feedListing li").slideout(1000);
+				$(".feedListing").empty();
 	var items=getNewsItems(xml);
 	console.log(items);
 	$.each(items,function(){
@@ -236,8 +237,10 @@ $(".loadingIcon").show();
 
 	});
 
-
+	$(".feed").scrollTop(0);
 	$(".loadingIcon").hide();
+	
+	
 	
 	},function(a,b,c){
 	$(".feedListing").empty();
