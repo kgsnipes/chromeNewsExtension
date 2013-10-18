@@ -8,6 +8,7 @@ $(document).ready(function(){
 	initApp();
 });
 
+
 var windowsArr=[];
 function initApp()
 {
@@ -170,7 +171,7 @@ $(".loadingIcon").show();
 	console.log(items);
 	$.each(items,function(){
 		
-		$(".feedListing").append("<li><a data-href=\""+this.permUrl+"\" class=\"feedItemTitle\" target=\"_blank\">"+this.title+"</a><div class=\"feedItemDescription\">"+this.description+"</div></li>");
+		$(".feedListing").append("<li style=\"border-left:10px solid "+getRandomColor(0.5)+";\"><a data-href=\""+this.permUrl+"\" class=\"feedItemTitle\" target=\"_blank\">"+this.title+"</a><div class=\"feedItemDescription\">"+this.description+"</div></li>");
 		
 
 		$(".feed ul.feedListing li div.feedItemDescription img").each(function(){

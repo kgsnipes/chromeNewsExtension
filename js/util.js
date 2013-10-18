@@ -10,6 +10,11 @@ function newsItem()
 	var date;
 }
 
+function getRandomColor(opacity)
+{
+var r = function () { return Math.floor(Math.random()*256) };
+    return "rgba(" + r() + "," + r() + "," + r() + ","+opacity+")";
+}
 
 function getXMLData(rssUrl,successCallback,failureCallback)
 {
