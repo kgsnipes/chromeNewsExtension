@@ -80,6 +80,43 @@ function initApp()
 	$(".webViewCloseBtn").click(function(){
 		$(".webViewScreen").fadeOut(500);
 	});
+	
+	$(".newsFeedRefresh").click(function(){
+			$.each(kgchannels,function(){
+			
+					
+					if($(".breadCrumb .channelName").text()==this.name)
+					{
+						var channelObj=this;
+						var urlForfeed='';
+						$.each(this.categories,function(){
+							
+							if(this[0]==$(".breadCrumb .categoryName").text())
+							{
+								categoryname=this[0];
+								$(".breadCrumb .categoryName").html(categoryname);
+								populateFeedForCategory(this[1]);
+								
+								$(".categoryListing li").each(function(){
+										if(categoryname==$($(this).children("span")[0]).text())
+										{
+											$(this).addClass("categoryItemSelected");
+											return false;
+										}
+								});
+								
+								
+								return false;
+							}
+						
+						});
+						if(this.categories.length==1)
+							openOrCloseDrawer(false);
+						return false;
+					}
+			
+			});
+	});
 }
 
 
