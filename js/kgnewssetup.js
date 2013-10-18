@@ -217,7 +217,8 @@ $(".loadingIcon").show();
 			var img=this;
 		 loadImage($(this).attr("data-img-src"), function(blob_uri, requested_uri) {
           img.src = blob_uri;
-         
+			$(this).attr("width",img.getWidth());
+			$(this).attr("height",img.getHeight());
         });
 
 
