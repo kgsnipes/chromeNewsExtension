@@ -16,6 +16,7 @@
   					"http://chicisimo.com/*",
 					"http://timesofindia.indiatimes.com/*",
 					"http://*.indiatimes.com/*",
+					"http://*.wordpress.com/*",
 					"webview"
   				],
   "icons": { "16": "images/kgnews-16.png", "128": "images/kgnews-128.png" }

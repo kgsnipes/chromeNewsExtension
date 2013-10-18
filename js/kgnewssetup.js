@@ -170,7 +170,7 @@ $(".loadingIcon").show();
 	var items=getNewsItems(xml);
 	console.log(items);
 	$.each(items,function(){
-		
+		console.log("title "+this.title);
 		$(".feedListing").append("<li style=\"border-left:10px solid "+getRandomColor(0.5)+";\"><a data-href=\""+this.permUrl+"\" class=\"feedItemTitle\" target=\"_blank\">"+this.title+"</a><div class=\"feedItemDescription\">"+this.description+"</div></li>");
 		
 

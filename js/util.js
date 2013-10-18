@@ -30,21 +30,21 @@ function getNewsItem(node)
 {
 	var item=new newsItem();
 	if($(node).find("title").length>0)
-		item.title= $(node).find("title").text();
+		item.title= $(node).find("title").first().text();
 
 	if($(node).find("description").length>0)
 	{
-		if($(node).find("description").text().indexOf("<![CDATA[")!=-1)
+		if($(node).find("description").first().text().indexOf("<![CDATA[")!=-1)
 		{
-			var insideCData=$(node).find("description").text().substring($(node).find("description").text().indexOf("<![CDATA["),$(node).find("description").text().lastIndexOf("]]>"));
+			var insideCData=$(node).find("description").text().substring($(node).find("description").first().text().indexOf("<![CDATA["),$(node).find("description").first().text().lastIndexOf("]]>"));
 			console.log(insideCData);
 			insideCData=insideCData.replace(/src=/g,"data-img-src=");
 			insideCData=insideCData.replace(/href=/g,"data-a-href=");
 			item.description=insideCData;
 		}
-		else if($(node).find("description").text().indexOf("src=")!=-1 || $(node).find("description").text().indexOf("href=")!=-1)
+		else if($(node).find("description").first().text().indexOf("src=")!=-1 || $(node).find("description").first().text().indexOf("href=")!=-1)
 		{
-			var insideCData=$(node).find("description").text();
+			var insideCData=$(node).find("description").first().text();
 			console.log(insideCData);
 			insideCData=insideCData.replace(/src=/g,"data-img-src=");
 			insideCData=insideCData.replace(/href=/g,"data-a-href=");
@@ -52,17 +52,17 @@ function getNewsItem(node)
 		}
 		else
 		{
-			item.description=$(node).find("description").text();
+			item.description=$(node).find("description").first().text();
 		}
 		
 	}
 
 
 	if($(node).find("link").length>0)
-		item.permUrl=$(node).find("link").text();
+		item.permUrl=$(node).find("link").first().text();
 
 	if($(node).find("pubDate").length>0)
-		item.date=new Date($(node).find("pubDate").text());
+		item.date=new Date($(node).find("pubDate").first().text());
     
 
     return item;

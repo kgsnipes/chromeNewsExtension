@@ -35,3 +35,20 @@ categories:[
 primaryCategory:"Top Stories"
 
 };
+
+kgchannels[3]={
+name:"TechCrunch",
+categories:[
+				["Startups","http://feeds.feedburner.com/techcrunch/startups?format=xml"],
+				["Gadgets","http://feeds.feedburner.com/crunchgear?fomat=xml"],
+				["Funding","http://feeds.feedburner.com/TechCrunch/fundings-exits?format=xml"],
+				["Mobile","http://feeds.feedburner.com/Mobilecrunch?format=xml"],
+				["GreenTech","http://feeds.feedburner.com/TechCrunch/greentech?format=xml"],
+				["Google","http://feeds.feedburner.com/TechCrunch/Google?format=xml"],
+				["Facebook","http://feeds.feedburner.com/TechCrunch/Facebook?format=xml"],
+				["Microsoft","http://feeds.feedburner.com/TechCrunch/Microsoft?format=xml"],
+				["Yahoo","http://feeds.feedburner.com/TechCrunch/Yahoo?format=xml"]
+			],
+primaryCategory:"Startups"
+
+};
