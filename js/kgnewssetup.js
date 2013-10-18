@@ -203,6 +203,7 @@ function populateFeedForCategory(url)
 $(".loadingIcon").show();
 	getXMLData(url,function(xml){
 	
+	//xml=$.parseXML( xml );
 	//$(".feedListing li").slideout(1000);
 				$(".feedListing").empty();
 	var items=getNewsItems(xml);

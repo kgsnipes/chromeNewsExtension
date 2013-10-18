@@ -227,17 +227,6 @@ primaryCategory:"Top"
 });
 
 
-
-
-kgchannels.push({
-name:"Techmeme",
-categories:[
-				["Technology","http://www.techmeme.com/feed.xml"]
-			],
-primaryCategory:"Technology"
-
-});
-
 kgchannels.push({
 name:"Times of India",
 categories:[
@@ -252,6 +241,18 @@ categories:[
 primaryCategory:"Top Stories"
 
 });
+
+
+kgchannels.push({
+name:"Techmeme",
+categories:[
+				["Technology","http://www.techmeme.com/feed.xml"]
+			],
+primaryCategory:"Technology"
+
+});
+
+
 
 kgchannels.push({
 name:"TechCrunch",
