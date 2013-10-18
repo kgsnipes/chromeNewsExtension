@@ -22,10 +22,16 @@ primaryCategory:"Technology"
 };
 
 kgchannels[2]={
-name:"Chichisimo",
+name:"Times of India",
 categories:[
-				["Looks","http://chicisimo.com/feed/rss/"]
+				["Top Stories","http://timesofindia.feedsportal.com/c/33039/f/533965/index.rss"],
+				["India","http://timesofindia.feedsportal.com/c/33039/f/533965/index.rss"]
+				["World","http://timesofindia.indiatimes.com/rssfeeds/296589292.cms"]
+				["Business","http://timesofindia.indiatimes.com/rssfeeds/1898055.cms"]
+				["Technology","http://timesofindia.indiatimes.com/rssfeeds/5880659.cms"]
+				["Science","http://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms"]
+				["Sports","http://timesofindia.indiatimes.com/rssfeeds/4719148.cms"]
 			],
-primaryCategory:"Looks"
+primaryCategory:"Top Stories"
 
 };
