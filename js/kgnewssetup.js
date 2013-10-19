@@ -75,7 +75,7 @@ function initApp()
 	
 	});
 
-	$(".loadingIcon").css({left:''+((($(document).width()-64)/$(document).width())*100)+'%'}).hide();
+	//$(".loadingIcon").css({left:''+((($(document).width()-64)/$(document).width())*100)+'%'}).hide();
 
 	$(".webViewCloseBtn").click(function(){
 		$(".webViewScreen").fadeOut(500);
@@ -204,7 +204,7 @@ function populateFeedForCategory(url)
 {
 
 	//$('.feed').showLoading();
-	$(".loadingIcon").show();
+	$(".loadingScreen").show();
 	getXMLData(url,function(xml){
 	
 	//xml=$.parseXML( xml );
@@ -247,14 +247,14 @@ function populateFeedForCategory(url)
 
 	//$(".feed").scrollTop(0);
 	//$('.feed').hideLoading();
-	$(".loadingIcon").hide();
+	$(".loadingScreen").hide();
 	
 	$(".feed").mCustomScrollbar({advanced:{autoExpandHorizontalScroll: true}});
 	$(".feed").mCustomScrollbar("scrollTo","top");
 	
 	},function(a,b,c){
 		//$('.feed').hideLoading();
-		$(".loadingIcon").hide();
+		$(".loadingScreen").hide();
 	$(".feedListing").empty();
 	$(".feedRefresh").unbind();
 
@@ -333,6 +333,10 @@ function openOrCloseDrawer(flag)
 	$(".categories").animate({left:'20%'},500);
 	$(".breadCrumb").animate({left:'40%'},500);
 	$(".loadingIcon").animate({left:'72%'},500);
+	/*if($(".loadingScreen").is(":visible"))
+	{
+		$(".loadingScreen img").animate({left:'72%'},500)	
+	}*/
 	//$(".feedListing").animate({width:'55%'},500);
 	}
 	else
