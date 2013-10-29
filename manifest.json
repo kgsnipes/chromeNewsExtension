@@ -15,6 +15,7 @@
 					"http://*.wordpress.com/*",
 					"http://*.ibnlive.in.com/*",
 					"http://*.zeenews.india.com/*",
+          "http://*.gsmarena.com/*",
 					"webview"
   				],
   "icons": { "16": "images/kgnews-16.png", "128": "images/kgnews-128.png" }

@@ -270,3 +270,13 @@ categories:[
 primaryCategory:"Startups"
 
 });
+
+
+kgchannels.push({
+name:"GSM Arena",
+categories:[
+				["Mobiles","http://www.gsmarena.com/rss-news-reviews.php3"]
+			],
+primaryCategory:"Mobiles"
+
+});

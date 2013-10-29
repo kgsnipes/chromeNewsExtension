@@ -249,7 +249,12 @@ function populateFeedForCategory(url)
 	//$('.feed').hideLoading();
 	$(".loadingScreen").hide();
 	
-	$(".feed").mCustomScrollbar({advanced:{autoExpandHorizontalScroll: true}});
+	$(".feed").mCustomScrollbar({advanced:{autoExpandHorizontalScroll: true},callbacks:{
+						onTotalScroll:function(){
+							appendTextOnTotalScroll();
+						}
+					}
+});
 	$(".feed").mCustomScrollbar("scrollTo","top");
 	
 	},function(a,b,c){
