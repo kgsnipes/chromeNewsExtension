@@ -280,3 +280,23 @@ categories:[
 primaryCategory:"Mobiles"
 
 });
+
+
+kgchannels.push({
+name:"Engadget",
+categories:[
+				["Gadgets","http://www.engadget.com/rss.xml"]
+			],
+primaryCategory:"Gadgets"
+
+});
+
+kgchannels.push({
+name:"Liliputing",
+categories:[
+				["Gadgets","http://feeds.feedburner.com/Liliputing?format=xml"]
+			],
+primaryCategory:"Gadgets"
+
+});
+
