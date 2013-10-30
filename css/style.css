@@ -231,3 +231,11 @@
 	top: 50%;
 	left: 50%;
 }
+
+.viewInBrowser
+{
+	margin-left: 21px;
+	color: crimson;
+	font-size: 11px;
+	font-weight: bold;
+}
