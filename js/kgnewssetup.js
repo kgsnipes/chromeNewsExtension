@@ -215,7 +215,7 @@ function populateFeedForCategory(url)
 	console.log(items);
 	$.each(items,function(){
 		console.log("title "+this.title);
-		$(".feedListing").append("<li style=\"border-left:10px solid "+getRandomColor(0.5)+";\"><a data-href=\""+this.permUrl+"\" class=\"feedItemTitle\" target=\"_blank\">"+this.title+"</a><a href=\""+this.permUrl+"\" class=\"viewInBrowser\" target=\"_blank\">View in Browser<img src=\"/images/icon_newpage.gif\"/></a><div class=\"feedItemDescription\">"+this.description+"</div></li>");
+		$(".feedListing").append("<li style=\"border-left:10px solid "+getRandomColor(0.5)+";\"><a contenteditable data-href=\""+this.permUrl+"\" class=\"feedItemTitle\" target=\"_blank\">"+this.title+"</a><a href=\""+this.permUrl+"\" class=\"viewInBrowser\" target=\"_blank\">View in Browser<img src=\"/images/icon_newpage.gif\"/></a><div class=\"feedItemDescription\" contenteditable>"+this.description+"</div></li>");
 		
 
 		$(".feed ul.feedListing li div.feedItemDescription img").each(function(){
@@ -232,7 +232,10 @@ function populateFeedForCategory(url)
 	});
 	$(".feed ul.feedListing li div.feedItemDescription a").remove();
 	$(".feed ul.feedListing li div.feedItemDescription br").remove();
-
+	
+	//disabling entry of text and paste
+	$(".feed ul.feedListing li div.feedItemDescription").on("change paste cut drop focus blur keypress input textInput",function(e){e.preventDefault(); return false;});
+	$(".feed ul.feedListing li a.feedItemTitle").on("change paste cut drop focus blur keypress input textInput",function(e){e.preventDefault(); return false;});
 
 
 	});
