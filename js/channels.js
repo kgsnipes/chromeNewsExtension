@@ -39,6 +39,18 @@ primaryCategory:"Top Stories"
 });
 
 kgchannels.push({
+name:"TNW",
+categories:[
+				["WEB","http://thenextweb.com/feed/"]
+				
+			],
+primaryCategory:"WEB"
+
+});
+
+
+
+kgchannels.push({
 name:"CNN IBN	",
 categories:[
 				
