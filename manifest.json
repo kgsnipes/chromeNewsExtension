@@ -19,6 +19,7 @@
 					"http://*.engadget.com/*",
 					"http://*.blogcdn.com/*",
 					"http://*.liliputing.com/*",
+					"http://*.thenextweb.com/*",
 					"webview"
   				],
   "icons": { "16": "images/kgnews-16.png", "128": "images/kgnews-128.png" }
