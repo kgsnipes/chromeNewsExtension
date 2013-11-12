@@ -354,6 +354,13 @@ function openOrCloseDrawer(flag)
 	$(".breadCrumb").animate({left:'0%'},500);
 	$(".loadingIcon").animate({left:'32%'},500);
 	//$(".feedListing").animate({width:'95%'},500);
+	$(".feed").mCustomScrollbar("destroy");
+	$(".feed").mCustomScrollbar({advanced:{autoExpandHorizontalScroll: true},callbacks:{
+						onTotalScroll:function(){
+							appendTextOnTotalScroll();
+						}
+					}
+		});
 	
 	}
 	
