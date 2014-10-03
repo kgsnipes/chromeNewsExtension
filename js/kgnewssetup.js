@@ -241,8 +241,12 @@ function populateFeedForCategory(url)
 	});
 
 	$(".feedListing li a.feedItemTitle").click(function(){
-
-		$(".webviewContainer").attr("src",$(this).attr("data-href"));
+		console.log($(this).attr("data-href"));
+		parent=$(".webviewContainer").parent();
+		//$(".webviewContainer").attr("src",$(this).attr("data-href"));
+		$(".webviewContainer").remove();
+		
+		parent.append("<webview src=\""+$(this).attr("data-href")+"\" class=\"webviewContainer\"></webview>");
 		$(".webViewScreen").fadeIn(500);
 	//	$(this).next().append("<webview src=\""+$(this).attr("data-href")+"\" style=\"width:100%;height:200px;\"></webview>")
 
