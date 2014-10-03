@@ -38,7 +38,7 @@ primaryCategory:"Top Stories"
 
 });
 
-kgchannels.push({
+/*kgchannels.push({
 name:"TNW",
 categories:[
 				["WEB","http://thenextweb.com/feed/"]
@@ -46,7 +46,7 @@ categories:[
 			],
 primaryCategory:"WEB"
 
-});
+});*/
 
 
 
@@ -256,7 +256,7 @@ primaryCategory:"Top"
 });
 
 
-kgchannels.push({
+/*kgchannels.push({
 name:"Techmeme",
 categories:[
 				["Technology","http://www.techmeme.com/feed.xml"]
@@ -285,7 +285,7 @@ primaryCategory:"Startups"
 });
 
 
-kgchannels.push({
+/*kgchannels.push({
 name:"GSM Arena",
 categories:[
 				["Mobiles","http://www.gsmarena.com/rss-news-reviews.php3"]
@@ -311,5 +311,5 @@ categories:[
 			],
 primaryCategory:"Gadgets"
 
-});
+});*/
 
